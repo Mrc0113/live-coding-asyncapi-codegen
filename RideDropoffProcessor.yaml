@@ -180,13 +180,13 @@ components:
       contentType: application/json
 channels:
   'taxi/nyc/v1/${ride_status}/${passenger_count}/${ride_id}/${longitude}/${latitude}':
-    subscribe:
+    publish:
       x-scs-function-name: processDropoffRideAverages
       x-scs-destination: taxiUpdateQueue
       message:
         $ref: '#/components/messages/TaxiStatusUpdate'
   taxi/nyc/v1/stats/dropoff/avg:
-    publish:
+    subscribe:
       x-scs-function-name: processDropoffRideAverages
       message:
         $ref: '#/components/messages/RideAverageUpdate'
@@ -197,5 +197,4 @@ info:
     TaxiStatusUpdates with a ride status of "dropoff", process the events, and
     output summary events</p>
   title: RideDropoffProcessor
-  x-view: provider
   version: 0.0.1

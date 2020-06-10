@@ -72,7 +72,7 @@ components:
       contentType: application/json
 channels:
   taxi/nyc/v1/stats/dropoff/avg:
-    subscribe:
+    publish:
       message:
         $ref: '#/components/messages/RideAverageUpdate'
 asyncapi: 2.0.0
@@ -81,5 +81,4 @@ info:
     <p>This is a nodejs application that will consume summary events via MQTT
     for further analysis</p>
   title: RideDropoffConsumer
-  x-view: provider
   version: 0.0.1
