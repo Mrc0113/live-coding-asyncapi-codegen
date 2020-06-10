@@ -73,6 +73,7 @@ components:
 channels:
   taxi/nyc/v1/stats/dropoff/avg:
     publish:
+      operationId: onRideDropoffAverageUpdate
       message:
         $ref: '#/components/messages/RideAverageUpdate'
 asyncapi: 2.0.0
@@ -82,3 +83,7 @@ info:
     for further analysis</p>
   title: RideDropoffConsumer
   version: 0.0.1
+servers:
+  solace:
+    url: tcp://mr-d8f4yze27kt.messaging.solace.cloud:1883
+    protocol: mqtt
