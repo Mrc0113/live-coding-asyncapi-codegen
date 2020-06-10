@@ -1,0 +1,22 @@
+default:
+  app:
+    name: RideDropoffConsumer
+    version: 0.0.1
+
+  broker:
+    mqtt:
+      url: mqtt://mr-d8f4yze27kt.messaging.solace.cloud:1883
+      topics: ["taxi/nyc/v1/stats/dropoff/avg"]
+      qos:
+      protocol: mqtt
+      retain:
+      subscribe: true
+      config: {username: "live-stream-client", password: "solaceLive" }
+
+development:
+
+test:
+
+staging:
+
+production:
